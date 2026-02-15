@@ -1,0 +1,1 @@
+# cookiecutter-pynchy-plugin
