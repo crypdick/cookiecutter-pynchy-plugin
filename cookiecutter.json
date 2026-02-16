@@ -1,0 +1,18 @@
+{
+  "plugin_slug": "hello",
+  "plugin_repo_name": "pynchy-plugin-{{ cookiecutter.plugin_slug }}",
+  "python_module": "pynchy_plugin_{{ cookiecutter.plugin_slug.replace('-', '_') }}",
+  "plugin_class_name": "{{ cookiecutter.plugin_slug.replace('-', ' ').title().replace(' ', '') }}Plugin",
+  "entry_point_name": "{{ cookiecutter.plugin_slug }}",
+  "plugin_description": "Plugin for pynchy",
+  "author_name": "Ricardo Decal",
+  "author_email": "public@ricardodecal.com",
+  "version": "0.1.0",
+  "python_requires": ">=3.12",
+  "include_mcp_server": "yes",
+  "include_skill": "no",
+  "include_agent_core": "no",
+  "include_channel": "no",
+  "include_tests": "no",
+  "open_source_license": ["MIT", "Apache-2.0", "BSD-3-Clause", "Proprietary"]
+}

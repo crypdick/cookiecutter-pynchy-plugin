@@ -1,0 +1,36 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "{{ cookiecutter.plugin_repo_name }}"
+version = "{{ cookiecutter.version }}"
+description = "{{ cookiecutter.plugin_description }}"
+readme = "README.md"
+requires-python = "{{ cookiecutter.python_requires }}"
+authors = [
+  { name = "{{ cookiecutter.author_name }}", email = "{{ cookiecutter.author_email }}" }
+]
+dependencies = [
+  "pluggy>=1.5.0"{% if cookiecutter.include_mcp_server == "yes" %},
+  "mcp>=1.0.0"{% endif %}
+]
+
+[project.entry-points."pynchy"]
+{{ cookiecutter.entry_point_name }} = "{{ cookiecutter.python_module }}:{{ cookiecutter.plugin_class_name }}"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/{{ cookiecutter.python_module }}"]
+
+{% if cookiecutter.include_tests == "yes" -%}
+[dependency-groups]
+dev = [
+  "pytest>=9.0.0",
+  "pytest-asyncio>=1.3.0",
+]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+asyncio_mode = "auto"
+addopts = "-q --no-header"
+{% endif -%}
