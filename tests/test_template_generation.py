@@ -51,6 +51,7 @@ class CookiecutterTemplateTests(unittest.TestCase):
             include_agent_core="no",
             include_channel="no",
             include_container_runtime="no",
+            include_workspace="no",
             include_tests="no",
         )
 
@@ -75,6 +76,7 @@ class CookiecutterTemplateTests(unittest.TestCase):
             include_agent_core="yes",
             include_channel="yes",
             include_container_runtime="yes",
+            include_workspace="yes",
             include_tests="yes",
         )
 
@@ -87,6 +89,8 @@ class CookiecutterTemplateTests(unittest.TestCase):
         self.assertTrue((module_root / "runtime.py").exists())
         self.assertTrue(skill_file.exists())
         self.assertTrue((generated / "tests" / "test_plugin_generation.py").exists())
+        plugin_init = (module_root / "__init__.py").read_text()
+        self.assertIn("pynchy_workspace_spec", plugin_init)
 
 
 if __name__ == "__main__":

@@ -24,6 +24,9 @@ See the official plugin docs in the Pynchy repo:
 {% if cookiecutter.include_container_runtime == "yes" -%}
 - `pynchy_container_runtime`
 {% endif -%}
+{% if cookiecutter.include_workspace == "yes" -%}
+- `pynchy_workspace_spec`
+{% endif -%}
 
 ## Installation
 
