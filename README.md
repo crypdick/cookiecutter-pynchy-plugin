@@ -21,6 +21,7 @@ Pynchy is a personal assistant runtime that routes WhatsApp messages to containe
   - Agent core (`pynchy_agent_core_info`)
   - Channel creation (`pynchy_create_channel`)
   - Container runtime (`pynchy_container_runtime`)
+  - Workspace definitions (`pynchy_workspace_spec`)
 - Optional generated plugin tests (`include_tests=yes`)
 - Optional starter files for MCP server and skills
 

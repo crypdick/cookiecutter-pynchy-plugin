@@ -69,3 +69,20 @@ class {{ cookiecutter.plugin_class_name }}:
     def pynchy_container_runtime(self) -> Any | None:
         return ExampleContainerRuntime()
 {% endif %}
+{% if cookiecutter.include_workspace == "yes" %}
+    @hookimpl
+    def pynchy_workspace_spec(self) -> dict[str, Any]:
+        return {
+            "folder": "{{ cookiecutter.plugin_slug }}",
+            "config": {
+                "project_access": False,
+                "schedule": "0 9 * * 1",
+                "prompt": "Run periodic {{ cookiecutter.plugin_slug }} task.",
+                "context_mode": "isolated",
+            },
+            "claude_md": (
+                "# {{ cookiecutter.plugin_slug.replace('-', ' ').title() }}\\n\\n"
+                "Describe this workspace agent's operating rules."
+            ),
+        }
+{% endif %}
