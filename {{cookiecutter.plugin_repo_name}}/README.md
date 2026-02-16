@@ -2,6 +2,11 @@
 
 {{ cookiecutter.plugin_description }}
 
+This plugin is designed for [Pynchy](https://github.com/crypdick/pynchy), a personal assistant runtime that routes WhatsApp messages to containerized coding agents and can be extended through plugins.
+
+See the official plugin docs in the Pynchy repo:
+- https://github.com/crypdick/pynchy/tree/main/docs/plugins
+
 ## Implemented Hooks
 
 {% if cookiecutter.include_mcp_server == "yes" -%}

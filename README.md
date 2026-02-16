@@ -4,6 +4,13 @@ Cookiecutter template for building third-party `pynchy` plugins.
 
 Generated projects follow the plugin packaging and hook conventions documented in `pynchy/docs/plugins/*`.
 
+## About Pynchy
+
+Pynchy is a personal assistant runtime that routes WhatsApp messages to containerized coding agents. Its plugin system lets you add channels, MCP tools, skills, agent cores, and runtime integrations without changing the base app.
+
+- Pynchy repository: https://github.com/crypdick/pynchy
+- Plugin documentation: https://github.com/crypdick/pynchy/tree/main/docs/plugins
+
 ## Features
 
 - Python package scaffold with `src/` layout
