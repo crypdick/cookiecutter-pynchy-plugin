@@ -13,6 +13,7 @@
   "include_skill": "no",
   "include_agent_core": "no",
   "include_channel": "no",
+  "include_container_runtime": "no",
   "include_tests": "no",
   "open_source_license": ["MIT", "Apache-2.0", "BSD-3-Clause", "Proprietary"]
 }

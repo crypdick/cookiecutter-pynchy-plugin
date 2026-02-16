@@ -13,6 +13,7 @@ Generated projects follow the plugin packaging and hook conventions documented i
   - Skill paths (`pynchy_skill_paths`)
   - Agent core (`pynchy_agent_core_info`)
   - Channel creation (`pynchy_create_channel`)
+  - Container runtime (`pynchy_container_runtime`)
 - Optional generated plugin tests (`include_tests=yes`)
 - Optional starter files for MCP server and skills
 

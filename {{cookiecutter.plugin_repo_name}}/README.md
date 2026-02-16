@@ -16,6 +16,9 @@
 {% if cookiecutter.include_channel == "yes" -%}
 - `pynchy_create_channel`
 {% endif -%}
+{% if cookiecutter.include_container_runtime == "yes" -%}
+- `pynchy_container_runtime`
+{% endif -%}
 
 ## Installation
 
@@ -41,6 +44,9 @@ Install into the same environment where pynchy runs, then restart pynchy.
 {% endif -%}
 {% if cookiecutter.include_channel == "yes" -%}
         ├── channel.py
+{% endif -%}
+{% if cookiecutter.include_container_runtime == "yes" -%}
+        ├── runtime.py
 {% endif -%}
 {% if cookiecutter.include_skill == "yes" -%}
         └── skills/
