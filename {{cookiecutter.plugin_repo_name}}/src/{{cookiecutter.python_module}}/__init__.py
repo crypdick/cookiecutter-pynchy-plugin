@@ -2,13 +2,18 @@
 
 from __future__ import annotations
 
+{% if cookiecutter.include_agent_core == "yes" or cookiecutter.include_mcp_server == "yes" or cookiecutter.include_skill == "yes" -%}
 from pathlib import Path
+{% endif -%}
 from typing import Any
 
 import pluggy
 
 {% if cookiecutter.include_channel == "yes" -%}
 from .channel import ExampleChannel
+{% endif -%}
+{% if cookiecutter.include_container_runtime == "yes" -%}
+from .runtime import ExampleContainerRuntime
 {% endif -%}
 
 hookimpl = pluggy.HookimplMarker("pynchy")
@@ -58,4 +63,9 @@ class {{ cookiecutter.plugin_class_name }}:
             on_chat_metadata=on_chat_metadata,
             registered_groups=registered_groups,
         )
+{% endif %}
+{% if cookiecutter.include_container_runtime == "yes" %}
+    @hookimpl
+    def pynchy_container_runtime(self) -> Any | None:
+        return ExampleContainerRuntime()
 {% endif %}

@@ -50,6 +50,7 @@ class CookiecutterTemplateTests(unittest.TestCase):
             include_skill="no",
             include_agent_core="no",
             include_channel="no",
+            include_container_runtime="no",
             include_tests="no",
         )
 
@@ -58,6 +59,7 @@ class CookiecutterTemplateTests(unittest.TestCase):
         self.assertTrue((module_root / "server.py").exists())
         self.assertFalse((module_root / "core.py").exists())
         self.assertFalse((module_root / "channel.py").exists())
+        self.assertFalse((module_root / "runtime.py").exists())
         self.assertFalse((module_root / "skills").exists())
         self.assertFalse((generated / "tests").exists())
 
@@ -72,6 +74,7 @@ class CookiecutterTemplateTests(unittest.TestCase):
             include_skill="yes",
             include_agent_core="yes",
             include_channel="yes",
+            include_container_runtime="yes",
             include_tests="yes",
         )
 
@@ -81,6 +84,7 @@ class CookiecutterTemplateTests(unittest.TestCase):
         self.assertFalse((module_root / "server.py").exists())
         self.assertTrue((module_root / "core.py").exists())
         self.assertTrue((module_root / "channel.py").exists())
+        self.assertTrue((module_root / "runtime.py").exists())
         self.assertTrue(skill_file.exists())
         self.assertTrue((generated / "tests" / "test_plugin_generation.py").exists())
 

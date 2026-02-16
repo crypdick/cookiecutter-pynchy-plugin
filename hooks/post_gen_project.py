@@ -33,6 +33,9 @@ if not is_enabled("{{ cookiecutter.include_agent_core }}"):
 if not is_enabled("{{ cookiecutter.include_channel }}"):
     remove_file(MODULE / "channel.py")
 
+if not is_enabled("{{ cookiecutter.include_container_runtime }}"):
+    remove_file(MODULE / "runtime.py")
+
 if not is_enabled("{{ cookiecutter.include_skill }}"):
     remove_tree(MODULE / "skills")
 
